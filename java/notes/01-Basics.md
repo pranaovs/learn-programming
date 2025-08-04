@@ -11,6 +11,7 @@ public class Sandbox {
 ```
 
 ## Comments
+
 ```java
 // This is a single line comment
 
@@ -73,8 +74,7 @@ public class Program {
 }
 ```
 
-`scanner.nextLine()` is waiting for the user to wrtypeinput something and press enter. The provided string is then assigned to a `String` variable and it can be referenced later.
-
+`scanner.nextLine()` is waiting for the user to write/type/input something and press enter. The provided string is then assigned to a `String` variable and it can be referenced later.
 
 ```java
 import java.util.Scanner;
@@ -133,4 +133,57 @@ public class Program {
 
 `boolean option = true;`
 
+## Loops
 
+### `while` loop
+
+```java
+while (_condition_) {
+  // code to execute while condition is true
+}
+```
+
+A loop can be broken using the `break` statement.
+
+```java
+int number = 1;
+
+while (true) {
+  System.out.println("Number: " + number);
+  if (number >= 5) {
+    break; // Exit the loop when number is 5 or greater
+  })
+
+  number++; // Increment the number
+}
+
+System.out.println("Exited");
+```
+
+`continue` can be used to skip the current iteration and continue with the next one.
+
+```java
+Scanner scanner = new Scanner(System.in);
+
+while (true) {
+    System.out.println("Insert positive integers");
+    int number = Integer.valueOf(scanner.nextLine());
+
+    if (number <= 0) {
+        System.out.println("Unfit number! Try again.");
+        continue; // Skip to the next iteration
+    }
+
+    System.out.println("Your input was " + number);
+}
+```
+
+### `for` loop
+
+```java
+for(*introducing variable*$ *condition*, *incrementer*) {
+  // Functionality to repeat
+}
+```
+
+> The condition of a loop is evaluated when the execution of the loop starts
