@@ -243,7 +243,61 @@ func main() {
 }
 ```
 
-> Index or value can be slipped by assigning it to _. `for _, value := range pow`
+> Index or value can be slipped by assigning it to _.
+>
+> `for _, value := range pow`
 >
 > Second variable (value) can be omitted if only index is needed.
 
+## Maps
+
+Map keys to values
+
+Zero value of a map is `nil`.
+
+```go
+type Vertex struct {
+  Lat, Long float64
+}
+var m map[string]Vertex
+
+func main() {
+  m = make(map[string]Vertex)
+  m["Bell Labs"] = Vertex{
+    40.68433, -74.39967,
+  }
+  fmt.Println(m["Bell Labs"]) // {40.68433 -74.39967}
+}
+```
+
+### Map literals
+
+Like struct literals but with keys and values
+
+```go
+var m = map[string]Vertex{
+  "Bell Labs": Vertex{
+    40.68433, -74.39967,
+  },
+  "Google": Vertex{
+    37.42202, -122.08408,
+  },
+}
+```
+
+```go
+var m = map[string]Vertex{
+  "Bell Labs": {40.68433, -74.39967},
+  "Google":    {37.42202, -122.08408},
+}
+```
+
+### Map operations
+
+* Insert or update a value: `m[key] = value`
+* Retrieve a value: `value = m[key]`
+* Delete a key: `delete(m, key)`
+* Test for existence: `value, ok = m[key]`
+  * If key exists, `ok` is true and `value` is the value associated with the key.
+  * If key does not exist, `ok` is false and `value` is the zero value for the map's value type.
+  * `elem, ok := m[key]` idiomatic way.
