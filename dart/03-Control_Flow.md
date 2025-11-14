@@ -159,6 +159,10 @@ It can follow `if-case` statements, `switch` statements, and `switch` expression
 switch (something) {
   case somePattern when some || boolean || expression:
   // body
+  case someOtherPattern when some || boolean || expression:
+  // body
+  case _:
+  // default body
 }
 ```
 
@@ -166,7 +170,8 @@ switch (something) {
 // Switch expression:
 var value = switch (something) {
   somePattern when some || boolean || expression => body,
-  // body
+  someOtherPattern when some || boolean || expression => body2,
+  _ => defaultBody
 }
 ```
 
