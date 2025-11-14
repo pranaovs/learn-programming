@@ -55,3 +55,12 @@ void main() {
   greet("Dart");
 }
 ```
+
+## Printing
+
+```dart
+void main() {
+  String hello = "Hello, Dart!";
+  print("text: $hello");
+}
+```
