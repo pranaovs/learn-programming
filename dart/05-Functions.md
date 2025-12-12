@@ -34,6 +34,8 @@ void enableFlags({bool? bold, bool? hidden}) {
 enableFlags(bold: true, hidden: false);
 ```
 
+> Named parameters are wrapped in curly braces `{}`.
+
 ### Default values
 
 ```dart
